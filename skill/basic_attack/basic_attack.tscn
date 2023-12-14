@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv1nejag28n0u"]
+
+[ext_resource type="PackedScene" uid="uid://dvvfdi5lekt27" path="res://skill/skill.tscn" id="1_4digv"]
+[ext_resource type="Script" path="res://skill/basic_attack/BasicAttack.cs" id="2_ix5j1"]
+[ext_resource type="PackedScene" uid="uid://dv8j47wnwul3s" path="res://combat/hitbox_component/hitbox_component.tscn" id="3_yatx7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0tjy"]
+size = Vector3(1.5, 1, 1.5)
+
+[node name="BasicAttack" instance=ExtResource("1_4digv")]
+script = ExtResource("2_ix5j1")
+
+[node name="HitboxComponent" parent="." index="2" instance=ExtResource("3_yatx7")]
+
+[node name="CollisionShape3D" parent="HitboxComponent/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.75)
+shape = SubResource("BoxShape3D_w0tjy")
+
+[editable path="HitboxComponent"]

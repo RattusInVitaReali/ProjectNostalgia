@@ -1,0 +1,21 @@
+<Project Sdk="Godot.NET.Sdk/4.1.2">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+    </PropertyGroup>
+    <ItemGroup>
+      <Folder Include="combat\health_component" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="ground_object\ground_item\**" />
+      <Compile Remove="addons\MonoCustomResourceRegistry\**" />
+      <Compile Remove="addons\**" />
+      <Compile Remove="ui\equipped_item_grid\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="ground_object\ground_item\**" />
+      <EmbeddedResource Remove="addons\MonoCustomResourceRegistry\**" />
+      <EmbeddedResource Remove="addons\**" />
+      <EmbeddedResource Remove="ui\equipped_item_grid\**" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwu46yg6ihsq0"]
+
+[ext_resource type="Script" path="res://combat/items_component/ItemsComponent.cs" id="1_6g0k6"]
+
+[node name="ItemsComponent" type="Node3D"]
+script = ExtResource("1_6g0k6")

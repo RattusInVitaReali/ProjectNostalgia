@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://ddug7mxdb58me"]
+
+[ext_resource type="Script" path="res://item/ItemData.cs" id="1_kaxna"]
+[ext_resource type="Resource" uid="uid://cpevlc4162ekl" path="res://affix/affixes/physical_damage_flat.tres" id="1_klvew"]
+[ext_resource type="Resource" uid="uid://b0fm7g2jbj2wy" path="res://affix/affixes/physical_damage_increased.tres" id="2_ji8kt"]
+[ext_resource type="Resource" uid="uid://d16poeksxpfvs" path="res://affix/affixes/critical_strike_chance_increased.tres" id="3_f22wg"]
+[ext_resource type="Texture2D" uid="uid://b0n6aoda3qevu" path="res://resources/icons/SwordT1.png" id="3_fdsne"]
+[ext_resource type="ArrayMesh" uid="uid://c4pleqc3ga0hg" path="res://resources/weapons/sword.tres" id="4_3q1og"]
+[ext_resource type="Resource" uid="uid://c3vxn7hckuwxa" path="res://affix/affixes/critical_strike_multiplier_increased.tres" id="4_4bi0k"]
+
+[resource]
+script = ExtResource("1_kaxna")
+Mesh = ExtResource("4_3q1og")
+Slots = ["Weapon1", "Weapon2"]
+Type = 1
+Icon = ExtResource("3_fdsne")
+Affixes = [ExtResource("1_klvew"), ExtResource("2_ji8kt"), ExtResource("3_f22wg"), ExtResource("4_4bi0k")]

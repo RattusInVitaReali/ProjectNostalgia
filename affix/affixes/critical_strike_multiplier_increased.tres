@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AffixData" load_steps=2 format=3 uid="uid://c3vxn7hckuwxa"]
+
+[ext_resource type="Script" path="res://affix/AffixData.cs" id="1_m0g8n"]
+
+[resource]
+script = ExtResource("1_m0g8n")
+Name = ""
+Weight = 1000
+MinLevel = 1
+MaxLevel = 100
+MinValue = 0.05
+MinValuePerLevel = 0.01
+MaxValue = 0.1
+MaxValuePerLevel = 0.02
+StatName = "CriticalStrikeMultiplier"
+ModifierType = 1
+_description = ""

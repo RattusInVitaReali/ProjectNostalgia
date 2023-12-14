@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CurrencyData" load_steps=4 format=3 uid="uid://du0of3j71d566"]
+
+[ext_resource type="Script" path="res://currency/CurrencyData.cs" id="1_d5itf"]
+[ext_resource type="Texture2D" uid="uid://db4wmih8a2lj" path="res://resources/icons/GemYellow.png" id="1_tgv8x"]
+[ext_resource type="ArrayMesh" uid="uid://cra1pgyuw1bi7" path="res://resources/ground_objects/gold.tres" id="2_yjqkr"]
+
+[resource]
+script = ExtResource("1_d5itf")
+Name = "Gold"
+Rarity = 0
+Icon = ExtResource("1_tgv8x")
+Mesh = ExtResource("2_yjqkr")

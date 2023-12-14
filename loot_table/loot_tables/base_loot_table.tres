@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://bmie0rltexenl"]
+
+[ext_resource type="Resource" uid="uid://ddug7mxdb58me" path="res://item/items/sword.tres" id="1_sqrdc"]
+[ext_resource type="Script" path="res://loot_table/LootTable.cs" id="1_ygcuv"]
+[ext_resource type="Script" path="res://loot_table/loot_table_components/LootTableItem.cs" id="2_hwuyd"]
+[ext_resource type="Resource" uid="uid://dgpkdo3q2gwlk" path="res://item/items/chestplate.tres" id="3_2xqtj"]
+
+[sub_resource type="Resource" id="Resource_xjahj"]
+script = ExtResource("2_hwuyd")
+_item = ExtResource("1_sqrdc")
+MinLevel = 1
+MaxLevel = 100
+Weight = 1000
+
+[sub_resource type="Resource" id="Resource_kebai"]
+script = ExtResource("2_hwuyd")
+_item = ExtResource("3_2xqtj")
+MinLevel = 1
+MaxLevel = 100
+Weight = 1000
+
+[resource]
+script = ExtResource("1_ygcuv")
+DropChance = 1.0
+Pool = Array[Resource]([SubResource("Resource_xjahj"), SubResource("Resource_kebai")])
+RollCount = 1

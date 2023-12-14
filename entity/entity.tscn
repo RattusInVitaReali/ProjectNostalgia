@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://c11510iu5mhw5"]
+
+[ext_resource type="Script" path="res://entity/Entity.cs" id="1_yfeqm"]
+[ext_resource type="PackedScene" uid="uid://c6s0nm6lq8v3q" path="res://combat/action_queue_component/action_queue_component.tscn" id="2_d1jes"]
+[ext_resource type="PackedScene" uid="uid://dp45kp6v88rp0" path="res://combat/health_component/health_component.tscn" id="3_084dw"]
+[ext_resource type="PackedScene" uid="uid://cy4xhyt5o24qu" path="res://combat/hit_manager_component/hit_manager_component.tscn" id="5_i5aqj"]
+[ext_resource type="PackedScene" uid="uid://cyff3txuwdamx" path="res://combat/hurtbox_component/hurtbox_component.tscn" id="6_gtfk6"]
+[ext_resource type="PackedScene" uid="uid://tj4at1ma3ic4" path="res://combat/stats_component/stats_component.tscn" id="6_ow53d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f228i"]
+radius = 0.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cboao"]
+radius = 0.75
+
+[node name="Entity" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_yfeqm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_f228i")
+
+[node name="ActionQueueComponent" parent="." instance=ExtResource("2_d1jes")]
+
+[node name="HitManagerComponent" parent="." node_paths=PackedStringArray("HealthComponent", "_hitProcessorComponents") instance=ExtResource("5_i5aqj")]
+HealthComponent = NodePath("../HealthComponent")
+_hitProcessorComponents = [NodePath("../StatsComponent")]
+
+[node name="StatsComponent" parent="." instance=ExtResource("6_ow53d")]
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("_statsComponent") instance=ExtResource("3_084dw")]
+MaxHealth = 100.0
+_statsComponent = NodePath("../StatsComponent")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("_actionQueue") instance=ExtResource("6_gtfk6")]
+_actionQueue = NodePath("../ActionQueueComponent")
+
+[node name="CollisionShape3D" parent="HurtboxComponent/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_cboao")
+
+[node name="Skills" type="Node3D" parent="."]
+
+[connection signal="Died" from="HealthComponent" to="." method="_OnHealthComponentDied"]
+
+[editable path="HurtboxComponent"]

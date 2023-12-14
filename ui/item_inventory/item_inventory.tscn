@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://bftdwrribfbnn"]
+
+[ext_resource type="PackedScene" uid="uid://bpuxnpm610o6" path="res://ui/slot_grid/slot_grid.tscn" id="1_bt2jl"]
+[ext_resource type="Script" path="res://ui/item_inventory/ItemInventory.cs" id="1_leyxl"]
+[ext_resource type="PackedScene" uid="uid://e3qufojhveql" path="res://ui/equipment/equipment.tscn" id="2_p6e18"]
+[ext_resource type="PackedScene" uid="uid://u6l0ifdeyr5" path="res://ui/item_info/item_info.tscn" id="3_1nmnh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypepw"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.54902)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.176471, 0.176471, 0.176471, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i68bs"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.72549, 0.72549, 0.72549, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njji2"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.72549, 0.72549, 0.72549, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="ItemInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_leyxl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = -150.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ypepw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i68bs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equipment" parent="Panel/HBoxContainer/Panel/VBoxContainer" instance=ExtResource("2_p6e18")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+
+[node name="EquipmentButton" type="Button" parent="Panel/HBoxContainer/Panel/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_njji2")
+text = "Equip"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SlotGrid" parent="Panel/HBoxContainer/ScrollContainer" instance=ExtResource("1_bt2jl")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 4
+
+[node name="ItemInfo" parent="Panel/HBoxContainer" instance=ExtResource("3_1nmnh")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="ItemSelected" from="Panel/HBoxContainer/Panel/VBoxContainer/Equipment" to="." method="_OnEquipmentItemSelected"]
+[connection signal="pressed" from="Panel/HBoxContainer/Panel/VBoxContainer/MarginContainer/EquipmentButton" to="." method="_OnEquipmentButtonPressed"]
+[connection signal="ItemSelected" from="Panel/HBoxContainer/ScrollContainer/SlotGrid" to="." method="_OnInventoryItemSelected"]

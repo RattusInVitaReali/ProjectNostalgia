@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AffixData" load_steps=2 format=3 uid="uid://bjra7aos360hh"]
+
+[ext_resource type="Script" path="res://affix/AffixData.cs" id="1_d1nn6"]
+
+[resource]
+script = ExtResource("1_d1nn6")
+Name = "Reinforced"
+Weight = 1000
+MinLevel = 1
+MaxLevel = 100
+MinValue = 5.0
+MinValuePerLevel = 1.0
+MaxValue = 15.0
+MaxValuePerLevel = 3.0
+StatName = "Armor"
+ModifierType = 0
+_description = ""

@@ -1,0 +1,14 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://cgovq4s7h44rr"]
+
+[ext_resource type="Texture2D" uid="uid://wc7s1twwukq5" path="res://resources/icons/AxeT1.png" id="1_xaywj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pva2"]
+render_priority = 20
+transparency = 1
+no_depth_test = true
+albedo_texture = ExtResource("1_xaywj")
+billboard_mode = 1
+
+[resource]
+lightmap_size_hint = Vector2i(4, 4)
+material = SubResource("StandardMaterial3D_2pva2")

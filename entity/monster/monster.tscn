@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dneqsva8vg85f"]
+
+[ext_resource type="PackedScene" uid="uid://c11510iu5mhw5" path="res://entity/entity.tscn" id="1_j126i"]
+[ext_resource type="Script" path="res://entity/monster/Monster.cs" id="2_wvhl0"]
+[ext_resource type="PackedScene" uid="uid://dv8j47wnwul3s" path="res://combat/hitbox_component/hitbox_component.tscn" id="3_nlcu0"]
+[ext_resource type="PackedScene" uid="uid://bbh61yerc3yt7" path="res://combat/loot_dropper_component/loot_dropper_component.tscn" id="4_5aekp"]
+[ext_resource type="Resource" uid="uid://bmie0rltexenl" path="res://loot_table/loot_tables/base_loot_table.tres" id="5_5luaq"]
+[ext_resource type="Resource" uid="uid://b2g645mpnbufn" path="res://loot_table/loot_tables/gold_loot_table.tres" id="5_jm0qa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3nb58"]
+height = 1.0
+radius = 3.0
+
+[node name="Monster" groups=["monster"] instance=ExtResource("1_j126i")]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("2_wvhl0")
+_leashRange = 5.0
+_baseMaxHealth = 10.0
+_baseDamage = 5.0
+_baseMovementSpeed = 3.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="1"]
+
+[node name="StatsComponent" parent="." index="4"]
+BaseStats = {
+"Armor": 20.0,
+"FlatReduction": 3.0,
+"MaxHP": 1.0,
+"MovementSpeed": 3.0,
+"PhysicalDamage": 5.0
+}
+
+[node name="PlayerDetectionHitbox" parent="." index="7" instance=ExtResource("3_nlcu0")]
+
+[node name="CollisionShape3D" parent="PlayerDetectionHitbox/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_3nb58")
+
+[node name="LootDropperComponent" parent="." index="9" instance=ExtResource("4_5aekp")]
+_lootTables = Array[Object]([ExtResource("5_jm0qa"), ExtResource("5_5luaq")])
+
+[connection signal="TargetFound" from="PlayerDetectionHitbox" to="." method="_OnTargetFound"]
+
+[editable path="HurtboxComponent"]
+[editable path="PlayerDetectionHitbox"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvvfdi5lekt27"]
+
+[ext_resource type="Script" path="res://skill/Skill.cs" id="1_i82ri"]
+
+[node name="Skill" type="Node3D"]
+script = ExtResource("1_i82ri")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CastTimeTimer" type="Timer" parent="."]
+one_shot = true

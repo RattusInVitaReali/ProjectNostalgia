@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cebawtgrxcyws"]
+
+[ext_resource type="Script" path="res://ground_object/GroundObject.cs" id="1_kxuos"]
+[ext_resource type="ArrayMesh" uid="uid://cra1pgyuw1bi7" path="res://resources/ground_objects/gold.tres" id="2_t6rf0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_akv8p"]
+height = 0.5
+
+[node name="GroundObject" type="RigidBody3D"]
+collision_layer = 32768
+script = ExtResource("1_kxuos")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("2_t6rf0")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("CylinderShape3D_akv8p")

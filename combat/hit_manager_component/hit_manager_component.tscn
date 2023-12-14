@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy4xhyt5o24qu"]
+
+[ext_resource type="Script" path="res://combat/hit_manager_component/HitManagerComponent.cs" id="2_2aixi"]
+
+[node name="HitManagerComponent" type="Node3D"]
+script = ExtResource("2_2aixi")

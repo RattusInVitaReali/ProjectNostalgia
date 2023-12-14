@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btk7lbmpf16a7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wv0w4"]
+resource_local_to_scene = true
+font_size = 20
+
+[node name="StatModifierLabel" type="Label"]
+text = "+38% Increased Critical Strike Chance"
+label_settings = SubResource("LabelSettings_wv0w4")
+horizontal_alignment = 1
+vertical_alignment = 1

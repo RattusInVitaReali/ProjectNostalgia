@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://u6l0ifdeyr5"]
+
+[ext_resource type="Texture2D" uid="uid://d3uh3wb6f4t0m" path="res://resources/icons/SwordT2.png" id="1_4drrk"]
+[ext_resource type="PackedScene" uid="uid://btk7lbmpf16a7" path="res://ui/item_info/stat_modifier_label.tscn" id="1_am2ig"]
+[ext_resource type="StyleBox" uid="uid://c1m2hkwhw60o0" path="res://ui/item_info/item_info_style_box.tres" id="1_blsqa"]
+[ext_resource type="Script" path="res://ui/item_info/ItemInfo.cs" id="1_nw3sg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3btui"]
+font_size = 25
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_74j8y"]
+font_size = 20
+
+[node name="ItemInfo" type="Panel"]
+custom_minimum_size = Vector2(400, 400)
+anchors_preset = -1
+anchor_right = 0.3125
+anchor_bottom = 0.555556
+offset_right = -400.0
+offset_bottom = -400.0
+theme_override_styles/panel = ExtResource("1_blsqa")
+script = ExtResource("1_nw3sg")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rare Sword"
+label_settings = SubResource("LabelSettings_3btui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Level 12"
+label_settings = SubResource("LabelSettings_74j8y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_4drrk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StatsContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" parent="VBoxContainer/ScrollContainer/StatsContainer" instance=ExtResource("1_am2ig")]
+layout_mode = 2
+
+[node name="Label3" parent="VBoxContainer/ScrollContainer/StatsContainer" instance=ExtResource("1_am2ig")]
+layout_mode = 2
+text = "+61% Increased Physical Damage"
+
+[node name="Label4" parent="VBoxContainer/ScrollContainer/StatsContainer" instance=ExtResource("1_am2ig")]
+layout_mode = 2
+text = "+ 172 to Physical Damage"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AffixData" load_steps=2 format=3 uid="uid://b0fm7g2jbj2wy"]
+
+[ext_resource type="Script" path="res://affix/AffixData.cs" id="1_1wge8"]
+
+[resource]
+script = ExtResource("1_1wge8")
+Name = "Merciless"
+Weight = 1000
+MinLevel = 1
+MaxLevel = 100
+MinValue = 0.05
+MinValuePerLevel = 0.01
+MaxValue = 0.15
+MaxValuePerLevel = 0.03
+StatName = "PhysicalDamage"
+ModifierType = 1
+_description = ""

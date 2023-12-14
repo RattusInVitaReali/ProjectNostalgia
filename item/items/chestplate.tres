@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://dgpkdo3q2gwlk"]
+
+[ext_resource type="Resource" uid="uid://mjig2cogugjf" path="res://affix/affixes/armor_flat.tres" id="1_is8y2"]
+[ext_resource type="Script" path="res://item/ItemData.cs" id="1_kd7dj"]
+[ext_resource type="Resource" uid="uid://drjjxhuj73w7d" path="res://affix/affixes/max_hp_flat.tres" id="2_dburu"]
+[ext_resource type="Resource" uid="uid://bjra7aos360hh" path="res://affix/affixes/armor_increased.tres" id="3_aa42a"]
+[ext_resource type="Texture2D" uid="uid://c1kjah5o28arf" path="res://resources/icons/ArmorT1.png" id="4_5d5ro"]
+
+[resource]
+script = ExtResource("1_kd7dj")
+Slots = ["BodyArmor"]
+Type = 3
+Icon = ExtResource("4_5d5ro")
+Affixes = [ExtResource("1_is8y2"), ExtResource("3_aa42a"), ExtResource("2_dburu")]

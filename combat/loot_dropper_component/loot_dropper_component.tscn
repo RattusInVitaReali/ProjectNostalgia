@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbh61yerc3yt7"]
+
+[ext_resource type="Script" path="res://combat/loot_dropper_component/LootDropperComponent.cs" id="1_d7tp3"]
+
+[node name="LootDropperComponent" type="Node3D"]
+script = ExtResource("1_d7tp3")
