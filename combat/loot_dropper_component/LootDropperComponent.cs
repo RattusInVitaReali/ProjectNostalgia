@@ -31,7 +31,6 @@ public partial class LootDropperComponent : CombatComponent
         return groundReward;
     }
 
-    // TODO: Use ApplyImpulse() to throw it around a bit
     private void SpawnGroundReward(GroundReward groundReward)
     {
         GetTree().Root.AddChild(groundReward);

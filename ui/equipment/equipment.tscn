@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://curj8b31scc4s" path="res://resources/icons/ShieldSmallT1.png" id="6_2xv0q"]
 [ext_resource type="Texture2D" uid="uid://b1g8knfpid7nt" path="res://resources/icons/ShieldSmallT2.png" id="7_h7iwd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn6so"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p4y1"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -21,7 +21,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfl67"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6a7dd"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -34,7 +34,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6syda"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86waw"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -47,7 +47,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45dkp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q45ho"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -60,7 +60,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivjuw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmwyo"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -73,7 +73,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w3cs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87h6d"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -86,7 +86,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb5ng"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3lwl"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -99,7 +99,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2hcs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwect"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -112,7 +112,7 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw8r7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_almb4"]
 resource_local_to_scene = true
 bg_color = Color(1, 1, 0, 0.498039)
 border_width_left = 10
@@ -139,47 +139,47 @@ script = ExtResource("1_ltwsh")
 [node name="Weapon1" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dn6so")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7p4y1")
 _emptyTextureOverride = ExtResource("3_s6jrh")
 
 [node name="Weapon2" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yfl67")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6a7dd")
 _emptyTextureOverride = ExtResource("3_s6jrh")
 
 [node name="BodyArmor" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6syda")
+theme_override_styles/panel = SubResource("StyleBoxFlat_86waw")
 _emptyTextureOverride = ExtResource("4_8u14b")
 
 [node name="Helmet" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_45dkp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_q45ho")
 _emptyTextureOverride = ExtResource("5_4qfyb")
 
 [node name="Boots" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ivjuw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmwyo")
 _emptyTextureOverride = ExtResource("6_2xv0q")
 
 [node name="Gloves" parent="." instance=ExtResource("2_h485n")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3w3cs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_87h6d")
 _emptyTextureOverride = ExtResource("7_h7iwd")
 
 [node name="Slot7" parent="." instance=ExtResource("2_h485n")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wb5ng")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3lwl")
 
 [node name="Slot8" parent="." instance=ExtResource("2_h485n")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_c2hcs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwect")
 
 [node name="Slot9" parent="." instance=ExtResource("2_h485n")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yw8r7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_almb4")
